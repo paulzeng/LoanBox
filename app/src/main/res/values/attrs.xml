@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--ShowHidePasswordEditText-->
+    <declare-styleable name="ShowHidePasswordEditText">
+        <attr name="drawable_hide" format="integer"/>
+        <attr name="drawable_show" format="integer"/>
+        <attr name="monospace" format="boolean"/>
+        <attr name="tint_color" format="color"/>
+    </declare-styleable>
+    <!--DeletableEditText-->
+    <declare-styleable name="ClearEditText">
+        <attr name="drawable_del" format="integer"/>
+        <attr name="monospace_del" format="boolean"/>
+    </declare-styleable>
+</resources>

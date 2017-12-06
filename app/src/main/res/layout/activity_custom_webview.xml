@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/main_bg_color"
+                android:orientation="vertical">
+
+    <com.xdroid.loanbox.widgets.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bottom_tip_text_color"/>
+
+    <WebView
+        android:id="@+id/mWebview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_bar"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:textColor="#373636"
+        android:textSize="14sp"/>
+
+</RelativeLayout>

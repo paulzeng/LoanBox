@@ -9,4 +9,61 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/tv_size_large_</item>
+    </style>
+
+    <style name="tv_style_main">
+        <item name="android:textSize">@dimen/tv_size_normal</item>
+        <item name="android:textColor">@color/main_text_color</item>
+    </style>
+
+    <style name="tv_style_second">
+        <item name="android:textSize">@dimen/tv_size_large_</item>
+        <item name="android:textColor">@color/second_text_color</item>
+    </style>
+
+    <style name="tv_style_third">
+        <item name="android:textSize">@dimen/tv_size_small</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- lv 中有头像的时候，这是头像的通用格式 -->
+    <style name="lv_head">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">70dp</item>
+        <item name="android:src">@drawable/icon_default_image</item>
+    </style>
+
+    <!-- lv　条目中，　如果没有头像，这个是左边通用的文字样式 -->
+    <style name="lv_item_nohead_left_comm_tv">
+        <item name="android:textSize">@dimen/tv_size_normal</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@null</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+        <item name="android:lineSpacingMultiplier">1</item>
+        <item name="android:textColor">@color/second_text_color</item>
+    </style>
+
+    <!-- 网络访问的加载进度框 -->
+    <style name="netLoadingDialog" parent="@android:style/Theme.Dialog">
+
+        <!-- 设置完全透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 设置无边框 -->
+        <!-- <item name="android:windowFrame">@null</item> -->
+        <!-- 设置无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 设置为浮动窗口 -->
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 设置动画 -->
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <!-- 设置屏幕变暗 -->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
 </resources>

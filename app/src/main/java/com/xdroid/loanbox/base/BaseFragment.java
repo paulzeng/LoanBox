@@ -1,6 +1,7 @@
 package com.xdroid.loanbox.base;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
+import com.xdroid.loanbox.utils.DialogUtils;
 import com.xdroid.loanbox.utils.SerMap;
 
 import java.util.HashMap;
@@ -34,12 +36,14 @@ public abstract class BaseFragment extends Fragment {
     public boolean isFirst;
     // 用于禁止用户重复点击
     private boolean clickable = true;
+    private Dialog loading;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (rootView == null)
             rootView = inflater.inflate(getLayoutResource(), container, false);
         mUnbinder = ButterKnife.bind(this, rootView);
+        loading = DialogUtils.getLoadingDialog(this.getContext());
         initPresenter();
         initView();
         //可见，但是并没有加载过
@@ -107,7 +111,22 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        loading.cancel();
         mUnbinder.unbind();
+    }
+
+    /**
+     * 显示进度框
+     */
+    public void showDialog(){
+        loading.show();
+    }
+
+    /**
+     * 取消进度框
+     */
+    public void cancelDialog(){
+        loading.dismiss();
     }
 
     /**

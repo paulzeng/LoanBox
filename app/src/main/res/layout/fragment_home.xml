@@ -6,21 +6,14 @@
     android:background="@color/main_bg_color"
     android:orientation="vertical">
 
-    <com.xdroid.loanbox.widgets.TitleBar
-        android:id="@+id/title_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/color_bottom_green" />
-
     <com.aspsine.irecyclerview.IRecyclerView
         android:id="@+id/irv_home"
-        app:loadMoreEnabled="true"
-        app:refreshEnabled="true"
-        app:loadMoreFooterLayout="@layout/layout_irecyclerview_load_more_footer"
-        app:refreshHeaderLayout="@layout/layout_irecyclerview_refresh_header"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@color/main_bg_color"
-        android:layout_height="match_parent">
-    </com.aspsine.irecyclerview.IRecyclerView>
+        app:loadMoreEnabled="true"
+        app:loadMoreFooterLayout="@layout/layout_irecyclerview_load_more_footer"
+        app:refreshEnabled="true"
+        app:refreshHeaderLayout="@layout/layout_irecyclerview_refresh_header"/>
 
 </LinearLayout>

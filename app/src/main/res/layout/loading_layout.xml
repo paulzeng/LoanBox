@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="46dp"
+    android:layout_height="46dp"
+    android:background="@drawable/bg_corner"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <ProgressBar
+        android:id="@+id/dialog_pb"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:indeterminate="false"
+        android:indeterminateDrawable="@drawable/progress"/>
+
+</LinearLayout>

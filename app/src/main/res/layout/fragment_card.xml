@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.xdroid.loanbox.widgets.MyRefreshLayout
+        android:id="@+id/rl_listview_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ListView
+            android:id="@+id/lv_listview_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/line_color"
+            android:dividerHeight="1dp"
+            android:overScrollMode="never"
+            android:scrollbars="none"/>
+    </com.xdroid.loanbox.widgets.MyRefreshLayout>
+
 
 </LinearLayout>

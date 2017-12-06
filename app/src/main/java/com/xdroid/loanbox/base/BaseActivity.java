@@ -1,6 +1,7 @@
 package com.xdroid.loanbox.base;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -9,7 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 
 import com.xdroid.loanbox.R;
+import com.xdroid.loanbox.app.APP;
 import com.xdroid.loanbox.app.AppManager;
+import com.xdroid.loanbox.utils.DialogUtils;
 import com.xdroid.loanbox.utils.SerMap;
 import com.xdroid.loanbox.utils.StatusBarSetting;
 
@@ -25,8 +28,10 @@ import butterknife.Unbinder;
 public abstract class BaseActivity extends AppCompatActivity {
     public Context mContext;
     private Unbinder mUnbinder;
+    private static Activity mCurrentAct;
     // 用于禁止用户重复点击
     private boolean clickable = true;
+    private Dialog loading;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,9 +42,29 @@ public abstract class BaseActivity extends AppCompatActivity {
         SetStatusBarColor();
         mUnbinder = ButterKnife.bind(this);
         mContext = this;
+        mCurrentAct = this;
+        loading = DialogUtils.getLoadingDialog(this);
         this.initPresenter();
         this.initView();
+        APP.allActivity.add(this);
+    }
 
+    public static Activity getCurrentActivity() {
+        return mCurrentAct;
+    }
+
+    /**
+     * 显示进度框
+     */
+    public void showDialog(){
+        loading.show();
+    }
+
+    /**
+     * 取消进度框
+     */
+    public void cancelDialog(){
+        loading.dismiss();
     }
 
     /**
@@ -191,6 +216,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         mUnbinder.unbind();
+        loading.cancel();
         AppManager.getAppManager().finishActivity(this);
     }
 

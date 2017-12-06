@@ -13,15 +13,15 @@ import java.util.List;
 
 public class BaseFragmentAdapter extends FragmentPagerAdapter {
 
-    List<BaseFragment> fragmentList = new ArrayList<BaseFragment>();
+    List<Fragment> fragmentList = new ArrayList<Fragment>();
     private List<String> mTitles;
 
-    public BaseFragmentAdapter(FragmentManager fm, List<BaseFragment> fragmentList) {
+    public BaseFragmentAdapter(FragmentManager fm, List<Fragment> fragmentList) {
         super(fm);
         this.fragmentList = fragmentList;
     }
 
-    public BaseFragmentAdapter(FragmentManager fm, List<BaseFragment> fragmentList, List<String> mTitles) {
+    public BaseFragmentAdapter(FragmentManager fm, List<Fragment> fragmentList, List<String> mTitles) {
         super(fm);
         this.fragmentList = fragmentList;
         this.mTitles = mTitles;
@@ -43,7 +43,7 @@ public class BaseFragmentAdapter extends FragmentPagerAdapter {
     }
 
     //刷新fragment
-    public void setFragments(FragmentManager fm, List<BaseFragment> fragments, List<String> mTitles) {
+    public void setFragments(FragmentManager fm, List<Fragment> fragments, List<String> mTitles) {
         this.mTitles = mTitles;
         if (this.fragmentList != null) {
             FragmentTransaction ft = fm.beginTransaction();

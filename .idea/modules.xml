@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/LoanBox.iml" filepath="$PROJECT_DIR$/LoanBox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PushSDK/PushSDK.iml" filepath="$PROJECT_DIR$/PushSDK/PushSDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pickphotoview/pickphotoview.iml" filepath="$PROJECT_DIR$/pickphotoview/pickphotoview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/umeng_community_library_project/umeng_community_library_project.iml" filepath="$PROJECT_DIR$/umeng_community_library_project/umeng_community_library_project.iml" />
     </modules>
   </component>
 </project>

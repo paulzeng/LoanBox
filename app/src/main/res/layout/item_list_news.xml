@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_small" >
+
+    <ImageView
+        android:id="@+id/iv_head"
+        style="@style/lv_head"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/image_default"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:layout_toRightOf="@id/iv_head"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_news_title"
+            style="@style/lv_item_nohead_left_comm_tv"
+            android:ellipsize="end"
+            android:lines="1"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:text="现金贷烧成一片红海，贷款导航平台才是受益者？"
+            android:paddingLeft="@dimen/margin_small"
+            android:textColor="@color/main_text_color"
+            android:textSize="@dimen/tv_size_normal"/>
+
+        <TextView
+            android:id="@+id/tv_news_info"
+            style="@style/lv_item_nohead_left_comm_tv"
+            android:ellipsize="end"
+            android:lines="2"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin_normal"
+            android:layout_below="@+id/tv_news_title"
+            android:text="过去两年，线上贷款app集中爆发，手机应用商店搜索“贷款”，出现的贷款app达到上千家之多，“千贷大战”愈演愈烈。每一家都在跑马圈地，放款量也在去年出现井喷。"
+            android:textColor="@color/second_text_color"
+            android:textSize="@dimen/tv_size_small"
+            android:paddingLeft="@dimen/margin_small"
+            android:paddingRight="@dimen/margin_small"/>
+    </RelativeLayout>
+
+</RelativeLayout>

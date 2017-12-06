@@ -3,6 +3,7 @@ package com.xdroid.loanbox.utils;
 import com.xdroid.loanbox.R;
 import com.xdroid.loanbox.module.bean.BannerBean;
 import com.xdroid.loanbox.module.bean.BaseBean;
+import com.xdroid.loanbox.module.bean.NewsBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +31,16 @@ public class DataControl {
         BaseBean bean = null;
         for(int i=0;i<6;i++){
             bean = new BaseBean();
+            data.add(bean);
+        }
+        return data;
+    }
+
+    public static List<NewsBean> getNewsData(){
+        List<NewsBean> data = new ArrayList<>();
+        NewsBean bean = null;
+        for(int i=0;i<6;i++){
+            bean = new NewsBean();
             data.add(bean);
         }
         return data;

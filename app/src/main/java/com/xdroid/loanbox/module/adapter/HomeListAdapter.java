@@ -9,8 +9,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.xdroid.loanbox.R;
+import com.xdroid.loanbox.models.AppListResult;
 import com.xdroid.loanbox.module.bean.BaseBean;
+import com.xdroid.loanbox.module.bean.LoanBean;
 
 import java.util.List;
 
@@ -22,11 +25,11 @@ import java.util.List;
 public class HomeListAdapter extends RecyclerView.Adapter<HomeListAdapter.ItemViewHolder>
 {
     private Context mContext;
-    private List<BaseBean> mData;
+    private List<AppListResult.AppModel> mData;
     private onItemClickListenr mOnItemClickListenr;
     private final LayoutInflater inflater;
 
-    public HomeListAdapter(Context context, List<BaseBean> list) {
+    public HomeListAdapter(Context context, List<AppListResult.AppModel> list) {
         this.mContext = context;
         this.inflater = LayoutInflater.from(context);
         this.mData = list;
@@ -39,6 +42,17 @@ public class HomeListAdapter extends RecyclerView.Adapter<HomeListAdapter.ItemVi
 
     @Override
     public void onBindViewHolder(ItemViewHolder holder, final int position) {
+        AppListResult.AppModel bean = mData.get(position);
+        holder.tv_title.setText(bean.title);
+        holder.tv_content.setText(bean.subtitle);
+        holder.tv_money.setText(bean.edu_info);
+        holder.rootLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mOnItemClickListenr.onItemClick(position);
+            }
+        });
+        Glide.with(mContext).load(bean.imgurl).into(holder.iv_image);
     }
 
     @Override

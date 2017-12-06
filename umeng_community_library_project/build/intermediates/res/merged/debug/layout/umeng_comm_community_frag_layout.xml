@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/umeng_comm_default_background_color"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/umeng_comm_dimen_96px">
+
+        <ImageView
+            android:id="@+id/umeng_comm_title_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/umeng_comm_new_post"
+            android:paddingLeft="@dimen/umeng_comm_dimen_28px"
+            android:paddingRight="@dimen/umeng_comm_dimen_28px"
+            android:scaleType="centerInside"
+            android:src="@drawable/umeng_comm_title_back"/>
+
+        <TextView
+            android:id="@+id/umeng_comm_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="教练圈"
+            android:textColor="@color/umeng_comm_color_666666"
+            android:textSize="@dimen/umeng_comm_text_36px"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/umeng_comm_default_background_color">
+
+        <include
+            android:id="@+id/topic_action_bar"
+            layout="@layout/umeng_comm_fragment_title"
+            />
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/topic_action_bar">
+        </android.support.v4.view.ViewPager>
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </FrameLayout>
+
+    </RelativeLayout>
+</LinearLayout>
